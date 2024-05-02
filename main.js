@@ -1,6 +1,6 @@
 import { OBJEKTUMLISTA } from "./adat.js";
 import { cardkeszit} from "./kartyakeszit.js";
-import { rendezArszerint } from "./rendezesek.js";
+import { rendezArszerintNov, rendezArszerintCsok } from "./rendezesek.js";
 $(document).ready(function () {
     init();
   });
@@ -8,7 +8,6 @@ $(document).ready(function () {
     let artElem=$("article");
     let txt=cardkeszit(OBJEKTUMLISTA);
     artElem.html(txt);
-    rendezArszerint(OBJEKTUMLISTA);
     select();
   };
   
@@ -17,7 +16,10 @@ $(document).ready(function () {
     const selectElem=$("#sel");
     selectElem.on('change', function() {
       if ($(this).val()==="nov") {
-          rendezArszerint(OBJEKTUMLISTA);
+          rendezArszerintNov(OBJEKTUMLISTA);
+          init();
+    }else if($(this).val()==="csok"){
+        rendezArszerintCsok(OBJEKTUMLISTA);
           init();
     }
     })
