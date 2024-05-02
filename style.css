@@ -1,6 +1,6 @@
 
 main{
-    background-color: rgb(33, 37, 41);
+    background-color: rgb(221, 227, 233);
     height: 100vh;
 }
 article{
@@ -20,3 +20,4 @@ section{
     text-align: center;
     font-weight: bold;
 }
+
