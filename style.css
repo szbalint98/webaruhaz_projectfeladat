@@ -1,5 +1,22 @@
 
 main{
     background-color: rgb(33, 37, 41);
-    height: 100svh;
+    height: 100vh;
+}
+article{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap:30px;
+    
+    
+}
+section{
+    text-align: center;
+    margin: 10px;
+}
+.card{
+    text-align: center;
+    font-weight: bold;
 }

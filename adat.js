@@ -1,23 +1,38 @@
 export const OBJEKTUMLISTA=[
     {
-        nev:"Gtx2070",
+        nev:"RTX 2070",
         gyarto:"Nvidia",
-        ar:135000
+        ar:135000,
+        kep:"kepek/500.png"
+
     },
     {
-        nev:"Gtx2070",
+        nev:"RTX 3080",
         gyarto:"Nvidia",
-        ar:170000
+        ar:170000,
+        kep:"kepek/500.png"
     },
     {
-        nev:"Gtx2070",
+        nev:"GTX 770",
         gyarto:"Nvidia",
-        ar:125000
+        ar:25000,
+        kep:"kepek/500.png"
     },
     {
-        nev:"Gtx2070",
+        nev:"GTX 1080",
         gyarto:"Nvidia",
-        ar:135000
+        ar:115000,
+        kep:"kepek/600.png"
+    },{
+        nev:"RTX 2080",
+        gyarto:"Nvidia",
+        ar:175000,
+        kep:"kepek/600.png"
+    },{
+        nev:"GTX 1070",
+        gyarto:"Nvidia",
+        ar:76000,
+        kep:"kepek/600.png"
     }
 
 
