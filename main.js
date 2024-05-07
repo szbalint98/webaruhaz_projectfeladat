@@ -3,22 +3,25 @@ import { cardkeszit,tablazatKeszit} from "./kartyakeszit.js";
 import { rendezArszerintNov, rendezArszerintCsok, sortorles } from "./rendezesek.js";
 $(document).ready(function () {
     init();
-    sortorles(OBJEKTUMLISTA);
+    
   });
   function init(){
+    megjelenit(OBJEKTUMLISTA);
+    select();
+    adminrendezesArszerint();
+    sortorles(OBJEKTUMLISTA);
+  };
+
+  function megjelenit(OBJEKTUMLISTA){
     let artElem=$("#public");
     let adminTablaEelem=$("#admintabla")
-    adminTablaEelem.html("Hello")
     let txt=cardkeszit(OBJEKTUMLISTA);
     artElem.html(txt);
     txt=tablazatKeszit(OBJEKTUMLISTA);
     adminTablaEelem.html(txt);
-    console.log(txt)
-    select();
-    adminrendezesArszerint();
-    
-  };
-  
+
+  }
+
   function adminrendezesArszerint(){
     let katt=true;
     let thElem=$("table th:first");
