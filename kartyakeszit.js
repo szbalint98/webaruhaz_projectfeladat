@@ -14,3 +14,23 @@ export function cardkeszit(objektumlista){
     }
     return txt;
 };
+export function tablazatKeszit(objektumlista) {
+  let txt = `<table class="table table-dark table-striped" ><tr><th>Név</th><th>Gyártó:</th><th>Ár:</th><th>Törlés</th></tr>`;
+
+  objektumlista.forEach((objektum, index) => {
+      txt += "<tr>";
+      let count = 0;
+
+      for (let key in objektum) {
+          if (count < 3) {
+              txt += `<td>${objektum[key]}</td>`;
+          }
+          count++;
+      }
+      
+      txt += `<td><button class="kuka" id="${index}">🗑️</button></td></tr>`;
+  });
+
+  txt += "</table>";
+  return txt;
+}
