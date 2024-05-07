@@ -7,6 +7,13 @@ export function rendezArszerintNov(lista){
     lista.sort(function(a,b){return b.ar-a.ar})
     
  }
+ export function rendezNevszerint(lista){
+   lista.sort(function(a, b) {
+      if (a.nev < b.nev) return -1; 
+      if (a.nev > b.nev) return 1; 
+      return 0; 
+   });
+}
 export function sortorles(objektumlista){
    let torlesElem=$(".kuka");
    torlesElem.on("click", function(event){

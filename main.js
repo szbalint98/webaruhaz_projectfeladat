@@ -1,6 +1,6 @@
 import { OBJEKTUMLISTA } from "./adat.js";
 import { cardkeszit,tablazatKeszit} from "./kartyakeszit.js";
-import { rendezArszerintNov, rendezArszerintCsok, sortorles } from "./rendezesek.js";
+import { rendezArszerintNov, rendezArszerintCsok, sortorles, rendezNevszerint } from "./rendezesek.js";
 $(document).ready(function () {
     init();
     
@@ -48,7 +48,10 @@ $(document).ready(function () {
     }else if($(this).val()==="csok"){
         rendezArszerintCsok(OBJEKTUMLISTA);
           init();
-    }
+    }else if($(this).val()==="nev"){
+      rendezNevszerint(OBJEKTUMLISTA);
+        init();
+  }
     })
   }
     

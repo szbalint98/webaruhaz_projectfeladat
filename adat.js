@@ -19,9 +19,9 @@ export const OBJEKTUMLISTA=[
         kep:"kepek/500.png"
     },
     {
-        nev:"GTX 1080",
-        gyarto:"Nvidia",
-        ar:115000,
+        nev:"HD7070",
+        gyarto:"AMD",
+        ar:5000,
         kep:"kepek/600.png"
     },{
         nev:"RTX 2080",
