@@ -1,58 +1,50 @@
 import { OBJEKTUMLISTA } from "./adat.js";
-import { cardkeszit,tablazatKeszit} from "./kartyakeszit.js";
-import { rendezArszerintNov, rendezArszerintCsok, sortorles, rendezNevszerint } from "./rendezesek.js";
+import { cardkeszit} from "./kartyakeszit.js";
+import { rendezNevszerint } from "./rendezesek.js";
+
 $(document).ready(function () {
-    init();
-    
-  });
-  function init(){
-    megjelenit(OBJEKTUMLISTA);
-    select();
-    adminrendezesArszerint();
-    sortorles(OBJEKTUMLISTA);
-  };
+  pInit(OBJEKTUMLISTA);
+});
 
-  function megjelenit(OBJEKTUMLISTA){
-    let artElem=$("#public");
-    let adminTablaEelem=$("#admintabla")
-    let txt=cardkeszit(OBJEKTUMLISTA);
-    artElem.html(txt);
-    txt=tablazatKeszit(OBJEKTUMLISTA);
-    adminTablaEelem.html(txt);
+ function pInit(lista) {
+  megjelenit(lista, $("#public"), cardkeszit);
+  select();
+  szovegSzerint();
+}
 
-  }
+export function megjelenit(lista, szuloElem, fv){
+  let txt = fv(lista);
+  szuloElem.html(txt);
+}
 
-  function adminrendezesArszerint(){
-    let katt=true;
-    let thElem=$("table th:first");
-    thElem.on('click', function () {
-      
-      if (katt) {
-        rendezArszerintCsok(OBJEKTUMLISTA);
-        katt=false;
-        init();
-      }else{
-        rendezArszerintNov(OBJEKTUMLISTA);
-        katt=true;
-        init();
-      }
-        
-    })
-  }
-  function select() {
-    const selectElem=$("#sel");
-    selectElem.on('change', function() {
-      if ($(this).val()==="nov") {
-          rendezArszerintNov(OBJEKTUMLISTA);
-          init();
-    }else if($(this).val()==="csok"){
-        rendezArszerintCsok(OBJEKTUMLISTA);
-          init();
-    }else if($(this).val()==="nev"){
+function select() {
+  const selectElem = $("#sel");
+  selectElem.on("change", function () {
+    if ($(this).val() === "nov") {
+      rendezArszerintNov(OBJEKTUMLISTA);
+      pInit();
+    } else if ($(this).val() === "csok") {
+      rendezArszerintCsok(OBJEKTUMLISTA);
+      pInit();
+    } else if ($(this).val() === "nev") {
       rendezNevszerint(OBJEKTUMLISTA);
-        init();
-  }
-    })
-  }
-    
-    
+      pInit();
+    }
+  });
+}
+function szures(lista,szurtSzoveg){
+  const SZURTLISTA=lista.filter(function(elem) {
+  return elem.nev.includes(szurtSzoveg)
+})
+  return SZURTLISTA
+}
+function szovegSzerint(){
+  const keresElem=$("#szur")
+  keresElem.on("keyup", function () {
+      let szoveg=keresElem.val();
+      szoveg.toLowerCase()
+      const LISTA=szures(OBJEKTUMLISTA,szoveg)
+      pInit(LISTA)
+      
+  })
+}

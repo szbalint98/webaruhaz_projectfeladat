@@ -1,12 +1,9 @@
-
-export function rendezArszerintCsok(lista){
-   lista.sort(function(a,b){return a.ar-b.ar})
+import { aInit } from "./admin.js";
+export function rendezArszerint(lista,irany){
+   lista.sort(function(a,b){return irany * (a.ar-b.ar)})
    
-}
-export function rendezArszerintNov(lista){
-    lista.sort(function(a,b){return b.ar-a.ar})
-    
- }
+} 
+ 
  export function rendezNevszerint(lista){
    lista.sort(function(a, b) {
       if (a.nev < b.nev) return -1; 
@@ -19,6 +16,6 @@ export function sortorles(objektumlista){
    torlesElem.on("click", function(event){
       let index = $(this).prop("id");
       objektumlista.splice(index, 1);
-      sortorles(objektumlista);
+      aInit(objektumlista);
 
    })}
