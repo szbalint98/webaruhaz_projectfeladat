@@ -1,5 +1,7 @@
 import { aInit } from "./admin.js";
 
+
+
 export function rendezArszerint(lista,irany){
    lista.sort(function(a,b){return irany * (a.ar-b.ar)})
    
@@ -36,4 +38,4 @@ export function sortorles(objektumlista){
         console.log(koslista);
       });
     }
-    
+  

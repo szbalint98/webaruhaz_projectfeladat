@@ -10,7 +10,7 @@ $(document).ready(function () {
   megjelenit(lista, $("#public"), cardkeszit);
   select();
   szovegSzerint();
-  kosarBarak(OBJEKTUMLISTA,KOSARLISTA);
+  kosarBarak(lista,KOSARLISTA);
 }
 
 export function megjelenit(lista, szuloElem, fv){
