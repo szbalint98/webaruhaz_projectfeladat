@@ -1,7 +1,7 @@
 
 main{
     background-color: rgb(221, 227, 233);
-    height: 100vh;
+    height: 100%;
 }
 article{
     width: 80%;
@@ -9,15 +9,35 @@ article{
     display: flex;
     flex-wrap: wrap;
     gap:30px;
+    justify-content: center;
     
     
 }
+
 section{
     text-align: center;
     margin: 10px;
+    
 }
 .card{
     text-align: center;
     font-weight: bold;
 }
-
+#public{
+    border:rgb(0, 0, 0) solid 3px;
+    border-radius: 15px;
+    padding: 7px;
+    background-color: rgb(255, 255, 255);
+}
+.kosar{
+    border:rgb(0, 0, 0) solid 3px;
+    background-color: rgb(255, 255, 255);
+    margin: 10px;
+    padding: 10px;
+    border-radius: 15px;
+    font-weight: bold;
+    
+}
+#grid{
+    display:  grid;
+    grid-template-columns: 1fr 4fr;}

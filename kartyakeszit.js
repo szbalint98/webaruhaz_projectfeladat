@@ -7,8 +7,8 @@ export function cardkeszit(objektumlista){
         <div class="card-body">
           <h4 class="card-title">${objektumlista[index].nev}</h4>
           <p class="card-text">${objektumlista[index].gyarto}</p>
-          <p class="card-text">Ár:${objektumlista[index].ar}</p>
-          <a href='#' class='btn btn-primary'>Kosárba!</a>
+          <p class="card-text">Ár:${objektumlista[index].ar} Ft</p>
+          <button id='${index}' class='btn btn-primary'>Kosárba!</button>
         </div>
       </div>`
     }

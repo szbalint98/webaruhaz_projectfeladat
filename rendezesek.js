@@ -1,4 +1,5 @@
 import { aInit } from "./admin.js";
+
 export function rendezArszerint(lista,irany){
    lista.sort(function(a,b){return irany * (a.ar-b.ar)})
    
@@ -19,3 +20,20 @@ export function sortorles(objektumlista){
       aInit(objektumlista);
 
    })}
+   function beir(elem,elem2){
+      let kiirElem=$("#kiir");
+      kiirElem.append("<p>"+elem+" : "+ elem2+" Ft "+"</p>");
+      
+
+   }
+   export function kosarBarak(lista, koslista){
+      let kosargombELEM = $(".btn")
+      kosargombELEM.on("click", function(event) {
+        let index = event.target.id; 
+        let kivalasztottElem = lista[index];
+        koslista.push(kivalasztottElem);
+        beir(kivalasztottElem.nev,kivalasztottElem.ar);
+        console.log(koslista);
+      });
+    }
+    

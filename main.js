@@ -1,6 +1,6 @@
-import { OBJEKTUMLISTA } from "./adat.js";
+import { KOSARLISTA, OBJEKTUMLISTA } from "./adat.js";
 import { cardkeszit} from "./kartyakeszit.js";
-import { rendezNevszerint } from "./rendezesek.js";
+import { kosarBarak, rendezNevszerint } from "./rendezesek.js";
 
 $(document).ready(function () {
   pInit(OBJEKTUMLISTA);
@@ -10,6 +10,7 @@ $(document).ready(function () {
   megjelenit(lista, $("#public"), cardkeszit);
   select();
   szovegSzerint();
+  kosarBarak(OBJEKTUMLISTA,KOSARLISTA);
 }
 
 export function megjelenit(lista, szuloElem, fv){
@@ -36,13 +37,13 @@ function szures(lista,szurtSzoveg){
   const SZURTLISTA=lista.filter(function(elem) {
   return elem.nev.includes(szurtSzoveg)
 })
+  
   return SZURTLISTA
 }
 function szovegSzerint(){
   const keresElem=$("#szur")
   keresElem.on("keyup", function () {
       let szoveg=keresElem.val();
-      szoveg.toLowerCase()
       const LISTA=szures(OBJEKTUMLISTA,szoveg)
       pInit(LISTA)
       
