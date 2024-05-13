@@ -23,13 +23,13 @@ function select() {
   selectElem.on("change", function () {
     if ($(this).val() === "nov") {
       rendezArszerintNov(OBJEKTUMLISTA);
-      pInit();
+      pInit(OBJEKTUMLISTA);
     } else if ($(this).val() === "csok") {
       rendezArszerintCsok(OBJEKTUMLISTA);
-      pInit();
+      pInit(OBJEKTUMLISTA);
     } else if ($(this).val() === "nev") {
       rendezNevszerint(OBJEKTUMLISTA);
-      pInit();
+      pInit(OBJEKTUMLISTA);
     }
   });
 }
