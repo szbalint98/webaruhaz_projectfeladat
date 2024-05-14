@@ -11,7 +11,7 @@ $(document).ready(function () {
   select();
   szovegSzerint();
   kosarBarak(lista,KOSARLISTA);
-  kosarUrites();
+  kosarUrites(KOSARLISTA);
 }
 
 export function megjelenit(lista, szuloElem, fv){
