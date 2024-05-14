@@ -38,6 +38,10 @@ section{
     font-weight: bold;
     
 }
+#ures{
+    border-radius: 5px;
+    background-color: rgb(241, 157, 30);
+}
 #grid{
     display:  grid;
     grid-template-columns: 1fr 4fr;}

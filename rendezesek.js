@@ -38,4 +38,14 @@ export function sortorles(objektumlista){
         console.log(koslista);
       });
     }
+    export function kosarUrites(){
+      let kosartorolELEM = $("#ures");
+      let kiirElem=$("#kiir");
+      console.log(kosartorolELEM);
+      console.log(kiirElem);
+      kosartorolELEM.on("click",function() {
+         kiirElem.html("");
+      })
+
+    }
   
