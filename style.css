@@ -63,6 +63,21 @@ section{
 @media only screen and (max-width: 600px) {
     #ment{
         font-size: 9px;
+        width: 40px;
+        border-radius: 5px;
+        background-color: rgb(241, 157, 30);
+    }
+    #ures{
+        font-size: 9px;
+        width: 40px;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        background-color: rgb(241, 157, 30);
+    }
+}
+@media only screen and (max-width: 500px) {
+    #ment{
+        font-size: 9px;
         width: 30px;
         border-radius: 5px;
         background-color: rgb(241, 157, 30);
