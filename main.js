@@ -1,6 +1,6 @@
 import { KOSARLISTA, OBJEKTUMLISTA } from "./adat.js";
 import { cardkeszit} from "./kartyakeszit.js";
-import { kosarBarak, rendezNevszerint,kosarUrites, localMentes } from "./rendezesek.js";
+import { kosarBarak, rendezNevszerint,kosarUrites,localMentes } from "./rendezesek.js";
 
 $(document).ready(function () {
   pInit(OBJEKTUMLISTA);
@@ -14,7 +14,6 @@ $(document).ready(function () {
   kosarUrites(KOSARLISTA);
   localMentes(KOSARLISTA);
 }
-
 export function megjelenit(lista, szuloElem, fv){
   let txt = fv(lista);
   szuloElem.html(txt);
@@ -24,10 +23,10 @@ function select() {
   const selectElem = $("#sel");
   selectElem.on("change", function () {
     if ($(this).val() === "nov") {
-      rendezArszerintNov(OBJEKTUMLISTA);
+      rendezArszerint(OBJEKTUMLISTA,1);
       pInit(OBJEKTUMLISTA);
     } else if ($(this).val() === "csok") {
-      rendezArszerintCsok(OBJEKTUMLISTA);
+      rendezArszerint(OBJEKTUMLISTA,-1);
       pInit(OBJEKTUMLISTA);
     } else if ($(this).val() === "nev") {
       rendezNevszerint(OBJEKTUMLISTA);
@@ -37,7 +36,7 @@ function select() {
 }
 function szures(lista,szurtSzoveg){
   const SZURTLISTA=lista.filter(function(elem) {
-  return elem.nev.includes(szurtSzoveg)
+  return elem.nev.toLowerCase().includes(szurtSzoveg)
 })
   
   return SZURTLISTA
@@ -45,7 +44,8 @@ function szures(lista,szurtSzoveg){
 function szovegSzerint(){
   const keresElem=$("#szur")
   keresElem.on("keyup", function () {
-      let szoveg=keresElem.val();
+      let szoveg=keresElem.val().toLowerCase();
+      
       const LISTA=szures(OBJEKTUMLISTA,szoveg)
       pInit(LISTA)
       
