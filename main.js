@@ -1,6 +1,6 @@
 import { KOSARLISTA, OBJEKTUMLISTA } from "./adat.js";
 import { cardkeszit} from "./kartyakeszit.js";
-import { kosarBarak, rendezNevszerint,kosarUrites } from "./rendezesek.js";
+import { kosarBarak, rendezNevszerint,kosarUrites, localMentes } from "./rendezesek.js";
 
 $(document).ready(function () {
   pInit(OBJEKTUMLISTA);
@@ -12,6 +12,7 @@ $(document).ready(function () {
   szovegSzerint();
   kosarBarak(lista,KOSARLISTA);
   kosarUrites(KOSARLISTA);
+  localMentes(KOSARLISTA);
 }
 
 export function megjelenit(lista, szuloElem, fv){

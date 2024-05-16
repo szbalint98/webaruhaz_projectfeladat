@@ -34,6 +34,7 @@ export function sortorles(objektumlista){
         let index = event.target.id; 
         let kivalasztottElem = lista[index];
         koslista.push(kivalasztottElem);
+        
         beir(kivalasztottElem.nev,kivalasztottElem.ar);
         console.log(koslista);
       });
@@ -46,7 +47,20 @@ export function sortorles(objektumlista){
       kosartorolELEM.on("click",function() {
          kiirElem.html("");
          koslista.length = 0;
+         localurit();
       })
 
     }
+    function localurit(){
+      localStorage.clear();
+    }
+    function localHozAd(lista){
+      localStorage.setItem('videókártya',JSON.stringify(lista));
+    }
+    export function localMentes(lista) {
+      let kosargombELEM = $("#ment");
+      kosargombELEM.on("click", function() {
+          localHozAd(lista);
+      });
+  }
   
