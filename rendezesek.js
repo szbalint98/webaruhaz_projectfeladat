@@ -1,19 +1,16 @@
 import { aInit } from "./admin.js";
 
-
-
 export function rendezArszerint(lista,irany){
-   lista.sort(function(a,b){return irany * (a.ar-b.ar)})
-   
+   lista.sort(function(a,b){return irany * (a.ar-b.ar)})   
 } 
- 
+
  export function rendezNevszerint(lista){
    lista.sort(function(a, b) {
       if (a.nev < b.nev) return -1; 
       if (a.nev > b.nev) return 1; 
       return 0; 
-   });
-}
+   });}
+
 export function sortorles(objektumlista){
    let torlesElem=$(".kuka");
    torlesElem.on("click", function(event){
@@ -22,12 +19,12 @@ export function sortorles(objektumlista){
       aInit(objektumlista);
 
    })}
+
    function beir(elem,elem2){
       let kiirElem=$("#kiir");
       kiirElem.append("<p>"+elem+" : "+ elem2+" Ft "+"</p>");
-      
-
    }
+
    export function kosarBarak(lista, koslista){
       let kosargombELEM = $(".btn")
       kosargombELEM.on("click", function(event) {
@@ -39,6 +36,7 @@ export function sortorles(objektumlista){
         console.log(koslista);
       });
     }
+
     export function kosarUrites(koslista){
       let kosartorolELEM = $("#ures");
       let kiirElem=$("#kiir");
@@ -47,14 +45,16 @@ export function sortorles(objektumlista){
          koslista.length = 0;
          localurit();
       })
-
     }
+
     function localurit(){
       localStorage.clear();
     }
+
     function localHozAd(lista){
       localStorage.setItem('videókártya',JSON.stringify(lista));
     }
+
     export function localMentes(lista) {
       let kosargombELEM = $("#ment");
       kosargombELEM.on("click", function() {

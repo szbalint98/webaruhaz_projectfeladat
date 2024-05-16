@@ -16,7 +16,9 @@ $(document).ready(function () {
     thElem.on("click", function () {
       rendezArszerint(lista, katt);
       katt *= -1;
-  
       aInit(lista);
     });
+  }
+  function ujEszkoz() {
+    
   }

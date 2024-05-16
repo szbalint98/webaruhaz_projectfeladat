@@ -56,6 +56,10 @@ section{
     border-radius: 5px;
     background-color: rgb(241, 157, 30);
 }
+.ujk{
+    margin-top: 10px;
+    margin-left :15px;
+}
 #grid{
     display:  grid;
     grid-template-columns: 1fr 4fr;}
