@@ -1,6 +1,6 @@
 import { tablazatKeszit } from "./kartyakeszit.js";
 import { OBJEKTUMLISTA } from "./adat.js";
-import { rendezArszerint , sortorles} from "./rendezesek.js";
+import { adatFelvisz, rendezArszerint , sortorles} from "./rendezesek.js";
 import { megjelenit } from "./main.js";
 $(document).ready(function () {
     aInit(OBJEKTUMLISTA);
@@ -10,6 +10,7 @@ $(document).ready(function () {
     megjelenit(lista,$("#admintabla"),tablazatKeszit);
     adminrendezesArszerint(lista,katt);
     sortorles(lista);
+    adatFelvisz(lista);
   }
   function adminrendezesArszerint(lista) {
     let thElem = $("table th:first");
