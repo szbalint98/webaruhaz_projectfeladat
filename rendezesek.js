@@ -1,5 +1,3 @@
-import { aInit } from "./admin.js";
-
 export function rendezArszerint(lista,irany){
    lista.sort(function(a,b){return irany * (a.ar-b.ar)})   
 } 
@@ -11,74 +9,10 @@ export function rendezArszerint(lista,irany){
       return 0; 
    });}
 
-export function sortorles(objektumlista){
-   let torlesElem=$(".kuka");
-   torlesElem.on("click", function(event){
-      let index = $(this).prop("id");
-      objektumlista.splice(index, 1);
-      aInit(objektumlista);
 
-   })}
+  
+   
 
-   function beir(elem,elem2){
-      let kiirElem=$("#kiir");
-      kiirElem.append("<p>"+elem+" : "+ elem2+" Ft "+"</p>");
-   }
+    
 
-   export function kosarBarak(lista, koslista){
-      let kosargombELEM = $(".btn")
-      kosargombELEM.on("click", function(event) {
-        let index = event.target.id; 
-        let kivalasztottElem = lista[index];
-        koslista.push(kivalasztottElem);
-        
-        beir(kivalasztottElem.nev,kivalasztottElem.ar);
-        console.log(koslista);
-      });
-    }
-
-    export function kosarUrites(koslista){
-      let kosartorolELEM = $("#ures");
-      let kiirElem=$("#kiir");
-      kosartorolELEM.on("click",function() {
-         kiirElem.html("");
-         koslista.length = 0;
-         localurit();
-      })
-    }
-    export function adatFelvisz(lista){
-      let felviszElem = $("#felir");
-      felviszElem.off('click');
-      let nevElem=$("#knev").val();
-      let gyartoElem=$("#kgyarto").val();
-      let arElem=$("#kar").val();
-      felviszElem.on('click', function(){
-         
-         lista.push(
-            {
-               nev:`${nevElem}`,
-               gyarto:`${gyartoElem}`,
-               ar:`${arElem}`,
-            }
-         )
-         console.log(lista)
-         aInit(lista)
-      })
-      
-      }
-
-    function localurit(){
-      localStorage.clear();
-    }
-
-    function localHozAd(lista){
-      localStorage.setItem('videókártya',JSON.stringify(lista));
-    }
-
-    export function localMentes(lista) {
-      let kosargombELEM = $("#ment");
-      kosargombELEM.on("click", function() {
-          localHozAd(lista);
-      });
-  }
   
