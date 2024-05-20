@@ -19,6 +19,7 @@ $(document).ready(function () {
 export function megjelenit(lista, szuloElem, fv){
   let txt = fv(lista);
   szuloElem.html(txt);
+  console.log(szuloElem)
 }
 
 
