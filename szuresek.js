@@ -11,7 +11,7 @@ function szures(lista,szurtSzoveg){
     const keresElem=$("#szur")
     keresElem.on("keyup", function () {
         let szoveg=keresElem.val().toLowerCase();
-        
+        console.log(szoveg)
         const LISTA=szures(lista,szoveg)
         pInit(LISTA)
         
