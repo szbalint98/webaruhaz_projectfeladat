@@ -1,6 +1,7 @@
+import { aInit } from "./admin.js";
 export function adatFelvisz(lista){
     let felviszElem = $("#felir");
-    felviszElem.off('click');
+    
     let nevElem=$("#knev").val();
     let gyartoElem=$("#kgyarto").val();
     let arElem=$("#kar").val();
@@ -13,7 +14,7 @@ export function adatFelvisz(lista){
              ar:`${arElem}`,
           }
        )
-       
+       console.log(lista)
        aInit(lista)
     })
     

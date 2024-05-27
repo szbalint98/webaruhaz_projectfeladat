@@ -9,6 +9,7 @@ $(document).ready(function () {
   });
   
   export function aInit(lista) {
+    let katt=1;
     megjelenit(lista,$("#admintabla"),tablazatKeszit);
     adminrendezesArszerint(lista,katt);
     sortorles(lista);
